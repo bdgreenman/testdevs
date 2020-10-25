@@ -12,7 +12,7 @@ pipeline {
             }
         }
         stage('Three') {
-            steps {
+           
                 when {
                     not {
                         branch "master"
@@ -22,7 +22,6 @@ pipeline {
                     echo "hello"
                 }
                 
-            }
         }
         
         stage('Four') {
@@ -35,10 +34,10 @@ pipeline {
                     stage('Integration Test') {
                             agent {
                                
-                                    docker {
+                                  docker {
                                             reuseNode false
                                             image 'ubuntu'
-                                    }        
+                                  }        
                             }        
                             steps {
                                 echo "Running..... the Integration Test"
